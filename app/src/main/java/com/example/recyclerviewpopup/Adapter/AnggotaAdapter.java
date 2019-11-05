@@ -26,6 +26,9 @@ import com.example.recyclerviewpopup.Model.Anggota;
 import com.example.recyclerviewpopup.R;
 
 import java.util.List;
+import java.util.Objects;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AnggotaAdapter extends RecyclerView.Adapter<AnggotaAdapter.MyViewHolder> {
 
@@ -58,11 +61,18 @@ public class AnggotaAdapter extends RecyclerView.Adapter<AnggotaAdapter.MyViewHo
 
                 myDialog = new Dialog(holder.itemView.getContext());
                 myDialog.setContentView(R.layout.popup);
-                ImageView imageView = myDialog.findViewById(R.id.imgAnggotaPopUp);
-                TextView txtAnggota = myDialog.findViewById(R.id.txtNamaAnggota);
+                Objects.requireNonNull(myDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                CircleImageView imageView = myDialog.findViewById(R.id.imgAnggotaPopUp);
+                TextView txtDiv = myDialog.findViewById(R.id.txtDivAnggota);
+                TextView txtNamaAnggota = myDialog.findViewById(R.id.txtNamaAnggota);
+                TextView txtMotoAnggota = myDialog.findViewById(R.id.txtMotoAnggota);
 
                 Glide.with(holder.itemView.getContext()).load(urlGambar).into(imageView);
-                txtAnggota.setText(anggotaList.get(holder.getAdapterPosition()).getNama());
+                txtDiv.setText(anggotaList.get(holder.getAdapterPosition()).getTitle());
+                txtNamaAnggota.setText(anggotaList.get(holder.getAdapterPosition()).getNama());
+                txtMotoAnggota.setText(anggotaList.get(holder.getAdapterPosition()).getMoto());
                 myDialog.show();
 
             }
@@ -77,7 +87,7 @@ public class AnggotaAdapter extends RecyclerView.Adapter<AnggotaAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView imgAnggota;
+        private CircleImageView imgAnggota;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

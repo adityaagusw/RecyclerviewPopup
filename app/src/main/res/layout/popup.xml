@@ -1,29 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@color/colorPrimaryDark"
     android:layout_gravity="center"
-    android:gravity="center">
+    android:layout_margin="30dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="60dp">
+
+        <TextView
+            android:id="@+id/txtDivAnggota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Div"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:layout_marginTop="60dp"/>
+
+        <TextView
+            android:id="@+id/txtNamaAnggota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aditya Agus Wisanto"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/txtMotoAnggota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Moto"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"/>
+
+    </LinearLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgAnggotaPopUp"
-        android:layout_width="95dp"
-        android:layout_height="95dp"
-        android:src="@color/colorPrimary"
-        android:layout_gravity="center"/>
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:elevation="1dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"/>
 
-    <TextView
-        android:id="@+id/txtNamaAnggota"
+   <!-- <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgAnggotaPopUp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:elevation="2dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="hehe"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:textSize="20dp"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"/>
+        android:orientation="vertical">
 
-</LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85dp"
+            cardview:cardCornerRadius="10dp"
+            cardview:contentPaddingBottom="15dp"
+            cardview:contentPaddingLeft="15dp"
+            cardview:contentPaddingRight="15dp"
+            cardview:contentPaddingTop="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtNamaAnggota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="65dp"
+                    android:text="Aditya Agus Wisanto"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>-->
+
+</RelativeLayout>
